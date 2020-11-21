@@ -1,0 +1,366 @@
+:root {
+  --black : #060606;
+  --dark : #1fb622;
+  --lt : #cff0c5;
+  --ltgrey: #eeeeee;
+
+background-color: var(--ltgrey);
+}
+
+h1, h2, p {
+  color: var(--black);
+}
+
+/*--
+Nav Styles--*/
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: var(--black)
+}
+
+nav a {
+  padding: 1em;
+}
+
+nav a:link, nav a:visited {
+  color: var(--dark);
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+}
+nav a:hover, nav a:active  {
+  color: var(--lt);
+  text-decoration: none;
+}
+
+
+@media screen and (min-width: 768px) {
+  nav {flex-direction: row;}
+}
+
+.trigram {
+  font-size: 1.75em;
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .topnav a {display: none;}
+  .topnav a.trigram {display: inherit; align-self: flex-end;}
+}
+@media screen and (max-width: 767px) {
+  .topnav.responsive {align-items: center;}
+  .topnav.responsive a {display:inherit;}
+  .topnav.responsive a.trigram {visibility: hidden; position: absolute; right: 3%; top: 2%;}
+  .topnav.responsive a.trigram::after {content:'\000D7'; visibility:visible; text-indent: -.5em;}
+}
+
+svg {
+  display:block;
+  margin: auto;
+}
+
+path {
+  fill:none;
+  stroke: white;
+  stroke-width:15px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-opacity:1
+}
+
+.Joe {
+  stroke-dasharray: 1500;
+  animation: write1 1.5s ease-out;
+}
+
+.Lucas {
+  stroke-dasharray: 1825;
+  animation: write2 1.5s ease-in;
+}
+
+/*  keyframes */
+@keyframes write1 {
+    0% {
+        stroke-dashoffset: 1500;
+    }
+    40% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes write2 {
+    0%, 40% {
+        stroke-dashoffset: 1825;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.preloader {
+  display: none;
+}
+
+/*
+.preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: rgb(23, 22, 22);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  transition: opacity 0.5s linear;
+}
+
+.preloader.loaded{
+  opacity: 0;
+  pointer-events: none;
+}
+
+*/
+
+
+h1, h2, h3, nav {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 800;
+}
+
+p, ul {
+  font-family: 'Open Sans', sans-serif;
+}
+
+nav, footer {
+  background-color: var(--black);
+  color: var(--ltgrey);
+}
+
+footer {
+  text-align: center;
+  padding: 1em;
+  min-width: 100%;
+  bottom: 0;
+}
+
+::selection{
+  color: #fff;
+  background: #6665ee;
+}
+.skill-bars{
+  padding: 25px 30px;
+  width: 600px;
+  background: var(--lt);
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+.skill-bars .bar{
+  margin: 20px 0;
+}
+.skill-bars .bar:first-child{
+  margin-top: 0px;
+}
+.skill-bars .bar .info{
+  margin-bottom: 5px;
+}
+.skill-bars .bar .info span{
+  font-weight: 500;
+  font-size: 17px;
+  opacity: 0;
+  animation: showText 0.5s 1s linear forwards;
+}
+@keyframes showText {
+  100%{
+    opacity: 1;
+  }
+}
+.skill-bars .bar .progress-line{
+  height: 10px;
+  width: 100%;
+  background: var(--ltgrey);
+  position: relative;
+  transform: scaleX(0);
+  transform-origin: left;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.05),
+              0 1px rgba(255,255,255,0.8);
+  animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+@keyframes animate {
+  100%{
+    transform: scaleX(1);
+  }
+}
+.bar .progress-line span{
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: var(--dark);
+  animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+.bar .progress-line.html span{
+  width: 90%;
+}
+.bar .progress-line.css span{
+  width: 60%;
+}
+.bar .progress-line.jquery span{
+  width: 85%;
+}
+.bar .progress-line.python span{
+  width: 50%;
+}
+.bar .progress-line.mysql span{
+  width: 75%;
+}
+.progress-line span::before{
+  position: absolute;
+  content: "";
+  top: -10px;
+  right: 0;
+  height: 0;
+  width: 0;
+  border: 7px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-color: #000;
+  opacity: 0;
+  animation: showText2 0.5s 1.5s linear forwards;
+}
+.progress-line span::after{
+  position: absolute;
+  top: -28px;
+  right: 0;
+  font-weight: 500;
+  background: #000;
+  color: #fff;
+  padding: 1px 8px;
+  font-size: 12px;
+  border-radius: 3px;
+  opacity: 0;
+  animation: showText2 0.5s 1.5s linear forwards;
+}
+@keyframes showText2 {
+  100%{
+    opacity: 1;
+  }
+}
+.progress-line.html span::after{
+  content: "90%";
+}
+.progress-line.css span::after{
+  content: "60%";
+}
+.progress-line.jquery span::after{
+  content: "85%";
+}
+.progress-line.python span::after{
+  content: "50%";
+}
+.progress-line.mysql span::after{
+  content: "75%";
+}
+
+
+
+/*--
+Grid Styles--*/
+main {
+  padding: 0 2em 2em 2em;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-areas:
+            "head head"
+            "one three"
+            "image1 blog1"
+            "image2 blog2"
+            "image3 blog3";
+}
+
+header {grid-area: head;
+text-align: center;}
+header img {max-width: 100%;
+  object-fit: none;
+  object-position: center;
+  border-radius: 100px;
+  padding-top: 2em;
+}
+
+
+
+.one {grid-area: one;
+text-align: center;
+right: 20px;
+padding: 20px;
+width: 75%;
+background: var(--lt);
+box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+border-radius: 10px;}
+.three {grid-area: three;
+padding-top: 2em;
+padding-bottom: 2em;}
+#image1 {grid-area: image1;
+box-shadow: 5px 5px 20px rgba(0,0,0,0.2);}
+#image2 {grid-area: image2;
+box-shadow: 5px 5px 20px rgba(0,0,0,0.2);}
+#image3 {grid-area: image3;
+box-shadow: 5px 5px 20px rgba(0,0,0,0.2);}
+.blog1 {grid-area: blog1;
+  padding: 20px;
+  background: var(--lt);
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+  border-radius: 10px;}
+.blog2 {grid-area: blog2;
+  padding: 20px;
+  background: var(--lt);
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+  border-radius: 10px;}
+.blog3 {grid-area: blog3;
+  padding: 20px;
+  background: var(--lt);
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+  border-radius: 10px;}
+
+p {
+  text-align: left;
+}
+
+footer p {
+  text-align: center;
+}
+
+.profilepic {
+  border-radius: 300px;
+}
+
+.static {
+  position:absolute;
+  object-fit: contain;
+}
+
+.static:hover {
+  opacity:0;
+}
+
+@media screen and (max-width: 767px) {
+  main { grid-template-columns: 1fr;
+         grid-template-areas:
+            "head"
+            "three"
+            "image1"
+            "blog1"
+            "image2"
+            "blog2"
+            "image3"
+            "blog3";
+  }
+  .one, .two, .three {display: none;}
+}
+
+  #image1, #image2 {
+    border-style: none;
+  }

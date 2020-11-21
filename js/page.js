@@ -1,4 +1,4 @@
-const preloader = document.querySelector('.preloader');
+/* const preloader = document.querySelector('.preloader');
 
 const fadeEffect = setInterval(() => {
   // if we don't set opacity 1 in CSS, then   //it will be equaled to "", that's why we   // check it
@@ -11,6 +11,7 @@ const fadeEffect = setInterval(() => {
     clearInterval(fadeEffect);
   }
 }, 200);
+*/
 
 window.addEventListener('load', fadeEffect);
 
