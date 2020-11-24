@@ -6,26 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Final</title>
     <link rel="stylesheet" href="css/style.css"><!-- our stylesheet -->
+    <!--fontawesome--><script crossorigin="anonymous" src="https://kit.fontawesome.com/403cbe08da.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   </head>
 
 <body>
 
   <nav class="topnav" id="main-nav">
-     <a href="#" class="nav-links"><span class="mdi mdi-information">About</span></a>
-     <a href="#" class="nav-links"><span class="mdi mdi-plus-circle">Works</span></a>
+     <a href="#" class="logo"><img src="img/drawing.png" alt="..."></a>
+     <a href="#about" class="nav-links"><span class="mdi mdi-information">About</span></a>
+     <a href="#image1" class="nav-links"><span class="mdi mdi-plus-circle">Works</span></a>
      <a href="#" class="nav-links"><span class="mdi mdi-plus-circle">Contact</span></a>
      <a href="javascript:void(0);" class="nav-link trigram" onclick="navToggle()">&#9776;</a>
   </nav>
 
   <div class="preloader">
     <svg
-       xmlns:dc="http://purl.org/dc/elements/1.1/"
-       xmlns:cc="http://creativecommons.org/ns#"
-       xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-       xmlns:svg="http://www.w3.org/2000/svg"
-       xmlns="http://www.w3.org/2000/svg"
-       xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-       xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
        version="1.1"
        id="svg10"
        width="1162"
@@ -86,10 +83,12 @@
 
   <main>
       <header class="head">
-          <img src="img/profilepic.jpg" alt="...">
+          <img src="img/avatarstanding.png" alt="...">
+          <h1> Joe Lucas </h1>
       </header>
-      <div class="one">
+      <div class="one" id="about">
         <h1> About Me </h1>
+        <br>
         <p> My name is Joe Lucas and I'm a senior at Clarkson Univeristy majoring in Business Intelligence and Data Analytics. I love to code, game, and play basketball.
         </p>
         <br>
@@ -141,7 +140,6 @@
           </div>
         </div>
       </div>
-      </div>
       <div class="image" id="image1">
         <img class="static" src="img/JordanSite.png" alt="...">
         <img class="active" src="img/JordanSitemov.gif" alt="...">
@@ -174,12 +172,52 @@
       </div>
     </main>
     <footer>
-      <p> &copy;2020 Joe Lucas </p>
+      <!-- Footer main -->
+      <section class="ft-main">
+        <div class="ft-main-item">
+          <h2 class="ft-title">About</h2>
+          <ul>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="ft-main-item">
+          <h2 class="ft-title">Contact</h2>
+          <ul>
+            <li><a href="#">Phone</a></li>
+            <li><a href="#">Email</a></li>
+            <li><a href="#">Github</a></li>
+          </ul>
+        </div>
+
+      </section>
+
+      <!-- Footer social -->
+      <section class="ft-social">
+        <ul class="ft-social-list">
+          <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fab fa-github"></i></a></li>
+          <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+        </ul>
+      </section>
+
+      <!-- Footer legal -->
+      <section class="ft-legal">
+        <ul class="ft-legal-list">
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li>&copy; 2020 Joe Lucas</li>
+        </ul>
+      </section>
     </footer>
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"
 			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 			  crossorigin="anonymous"></script>
-  <script src="js/page.js" type="text/javascript"></script>
+  <script src="js/page.js"></script>
 </body>
